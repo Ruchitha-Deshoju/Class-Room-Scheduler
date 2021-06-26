@@ -1,0 +1,13 @@
+<div class="title">
+    <h2>Tasks</h2>
+</div>
+<div class="container">
+    <ul >
+        <li *ngFor="let obj of tasksList">
+            <span class="name">{{obj.teacher}}</span>
+            <span class="batch">{{obj.batch}}</span>
+            <span class="slot">{{obj.slot}}</span>
+            <button (click)="deleteTask(obj)">delete task</button>
+        </li>
+    </ul>
+</div>

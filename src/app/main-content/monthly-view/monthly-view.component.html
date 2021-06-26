@@ -1,0 +1,107 @@
+<div class="container">
+    <button class="material-icons floating-btn" (click)="addTask()">add</button>
+
+    <div class="calendar">
+        <div class="month">
+            <i class="fas fa-angle-left prev" (click)="prev()"></i>
+            <i class="fas fa-angle-right next" (click)="next()"></i>
+            <div class="date">
+                <h2>{{ display_date }}</h2>
+            </div>
+        
+        <div class="dropdown">
+            <div class="dropdown-select">
+                <span class="select">{{ viewName }}</span>
+                <i class="fa fa-caret-down icon"></i>
+            </div>
+            <div class="dropdown-list">
+                <div class="dropdown-list__item" (click)="viewType('Month')">Month</div>
+                <div class="dropdown-list__item" (click)="viewType('Week')">Week</div>
+                <div class="dropdown-list__item" (click)="viewType('Day')">Day</div>
+            </div>
+        </div>
+    </div>
+    <div  *ngIf="weekCalendar || monthCalendar">
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>           
+        </div>
+    </div>
+    <div *ngIf="dayCalendar">
+        <div class="weekdays">
+            <div>{{names_of_weekdays[day_idx]}}</div>
+        </div>
+    </div>
+        <div class="displayDays" *ngIf="monthCalendar">
+            <span *ngFor="let obj of prevMonthDays; let i = index">
+                <div class="prev-date" (click)="addTask(obj)" >
+                    <p>{{obj.date}}</p>
+                    <button (click)="viewTask(obj); $event.stopPropagation();">view tasks</button>
+                </div>
+            </span>
+            <span *ngFor="let obj of currentMonthDays; let i = index">
+                <div [ngClass]="{today: check_curr_day(obj.date)}" (click)="addTask(obj)">
+                    <p>{{obj.date}}</p>
+                    <button (click)="viewTask(obj); $event.stopPropagation();">view tasks</button>
+                </div>
+            </span>
+            <span *ngFor="let obj of nextMonthDays; let i = index">
+                <div class="next-date" (click)="addTask(obj)" >
+                    <p>{{obj.date}}</p>
+                    <button (click)="viewTask(obj); $event.stopPropagation();">view tasks</button>
+                </div>
+            </span>
+            
+        </div>
+        <div class="displayDays" *ngIf="weekCalendar">
+            <span *ngFor="let day of weekDays; let i = index">
+                <div (click)="addTask()" [ngClass]="{today: check_curr_day(day)}">{{day}}</div>
+            </span>
+        </div>
+        <div class="displayDays" *ngIf="dayCalendar">
+            <div (click)="addTask()" [ngClass]="{today: check_curr_day(select_date)}">{{select_date}}</div>
+        </div>
+    </div>
+   
+</div>
+
+<div class="bg-modal" *ngIf="modal_display" [hidden]="modal_display">
+    <div class="modal-content">
+        <div class="close" (click)="close()">+</div>
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="form-group">
+                    <select id="teacherName"  class="form-control" [ngModel]="defaultOption" name="teacherName">
+                        <option *ngFor="let item of teachers_list" [value]="item.teacher">{{ item.teacher}}</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <input type="date" ngModel class="form-control" name="taskDate" id="taskDate">
+            </div>
+            <div class="form-group">
+                <select id="batchName" class="form-control" [ngModel]="defaultBatch" name="batchName" required>
+                    <option value="Batch-1">Batch-1</option>
+                    <option value="Batch-2">Batch-2</option>
+                    <option value="Batch-3">Batch-3</option>
+                    <option value="Batch-4">Batch-4</option>
+                    <option value="Batch-5">Batch-5</option>
+                </select>
+                <select id="slotName" class="form-control" [ngModel]="defaultSlot" name="slotName" required>
+                    <option value="Slot-1">Slot-1</option>
+                    <option value="Slot-2">Slot-2</option>
+                    <option value="Slot-3">Slot-3</option>
+                    <option value="Slot-4">Slot-4</option>
+                    <option value="Slot-5">Slot-5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <textarea name="taskDescription" id="taskDescription" rows="3" class="form-control" [(ngModel)]="taskDescription"></textarea>
+            </div>
+            <button class="button" type="submit" [disabled]="!f.valid">Submit</button>
+        </form>
+    </div>
+</div>

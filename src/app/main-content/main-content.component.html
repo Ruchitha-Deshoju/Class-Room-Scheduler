@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <div class="calendarView wrapper_child">
+        <app-monthly-view (newTaskAdded)="newTaskAdded($event)"  (reqTaskDate)="fetchTask($event)"></app-monthly-view>
+    </div>
+    <div class="tasksView wrapper_child">
+        <app-tasks [taskDateRange]="taskDateRange" [newTaskAdded]="newTask" [teacherName]="teacherName"></app-tasks>
+    </div>
+</div>
+<!--  -->
+<!--  -->

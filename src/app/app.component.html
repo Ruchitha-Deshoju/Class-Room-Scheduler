@@ -1,0 +1,13 @@
+
+<div class="wrapper">
+  <div class="sidebar_content wrapper_child">
+    <app-side-bar (teacherName)="fetchTeacherTasks($event)"></app-side-bar>
+  </div>
+  <div class="main_content wrapper_child">
+    <app-main-content [teacherName]="teacherName"></app-main-content>
+  </div>
+</div>
+
+<!-- [taskName]="taskType" -->
+
+<!-- (taskName)="fethTask($event)" -->

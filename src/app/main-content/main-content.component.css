@@ -1,0 +1,23 @@
+.wrapper{
+    display: flex;
+    position: relative;
+}
+
+.wrapper-child {
+    float: left;
+}
+
+.wrapper .calendarView  {
+    width: 70%;
+    height: 100%;
+    background-color: green;
+    position: fixed;
+}
+
+.wrapper .tasksView  {
+    width: 30%;
+    margin-left: 70%;
+    height: 100%;
+    background-color: #E5E7E9;
+    position: fixed;
+}

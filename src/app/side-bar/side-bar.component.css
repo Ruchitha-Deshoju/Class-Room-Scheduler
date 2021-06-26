@@ -1,0 +1,112 @@
+
+.container {
+  padding: 10px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+h2{
+  color: #591f5d;
+  text-align: center;
+  padding-top: 3px;
+  font-size: x-large;
+}
+
+.title {
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.title h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.radio {
+  display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.radio__input {
+  display: none;
+}
+
+.radio__radio{
+  width: 1.25em;
+  border: 2px solid #7bb1a7;
+  height: 1.25rem;
+  border-radius: 50%;
+  margin-right: 10px;
+  box-sizing: border-box;
+  padding: 2px;
+}
+
+.radio__radio::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #009879;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.15s;
+}
+
+.radio__input:checked+ .radio__radio::after{
+  transform: scale(1);
+  /* border: 2px solid #009879; */
+}
+/* .container .group {
+    padding-top: 8px;
+    padding-left: 40px;
+    margin: 8px;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+
+label {
+  position: relative;
+}
+
+label::before {
+  content: "";
+  background: url("img/check-circle.svg");
+  background-position: center;
+  background-size: contain;
+  width: 27px;
+    height: 27px;
+    position: absolute;
+    left: -43px;
+    top: -7px;
+  transform: scale(0);
+}
+
+/* input[type="radio"]: + label::before {
+  transform: scale(1) ;
+} */
+
+/* label::after {
+  content: "";
+  border: 2px solid #27ae60;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -42px;
+  top: -6px;
+  border-radius: 50%;
+}  */
+
+ 
+

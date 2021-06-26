@@ -1,0 +1,17 @@
+    <div class="title">
+        <h2>Calendar</h2>
+    </div>
+        <div class="container form-group">
+            <label class="radio">
+                <input type="radio" (click)="getTasks('')" name="name" id="name" class="radio__input">
+                <div class="radio__radio"></div>
+                All tasks
+            </label>
+            <label class="radio" *ngFor="let obj of teachers_list">
+                <input type="radio" (click)="getTasks(obj.teacher)" name="name" id="name" class="radio__input" >
+                <div class="radio__radio"></div>
+                {{ obj.teacher }}
+            </label>
+            <input type="text" name="teacherName" id="teacherName" [(ngModel)]="newTeacherName">
+            <button class="addTeacher" (click)="addTeacher()">Add teacher</button>
+        </div>
