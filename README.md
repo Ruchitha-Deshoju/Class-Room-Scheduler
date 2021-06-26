@@ -1,4 +1,4 @@
-HTTPRoutes to fetch data
+## HTTPRoutes to fetch data
 
 to add teacher to database
 `http://localhost:3000/addteacher`
@@ -24,7 +24,7 @@ to get tasks when clicked on specified date
 #to delete task from database
 `http://localhost:3000/deletedata/${id}`
 
-Database design 
+## Database design 
 //create table to store slots
 let sql = 'CREATE TABLE slots (id INT AUTO_INCREMENT PRIMARY KEY, batch VARCHAR(255), slot VARCHAR(255), teacher VARCHAR(255), date_of_class DATE)';
 
