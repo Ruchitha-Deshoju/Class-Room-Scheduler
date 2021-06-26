@@ -1,8 +1,8 @@
 to add teacher to database
-'http://localhost:3000/addteacher'
+`http://localhost:3000/addteacher`
 
 to add task to database
-`http://localhost:3000/getdata/${task.date_of_class}` and 'http://localhost:3000/addslot', obj
+`http://localhost:3000/getdata/${task.date_of_class}` and (`http://localhost:3000/addslot`, obj)
 
 to get all tasks based on months or weeks
 `http://localhost:3000/getalltasks/${startDate}/${endDate}`
@@ -11,10 +11,10 @@ to get teacher tasks based on filterd week or month
 `http://localhost:3000/getteachertasks/${startDate}/${endDate}/${name}`
 
 to get all teachers in sidebar
-'http://localhost:3000/getallteachers'
+`http://localhost:3000/getallteachers`
 
 to get teachers curr date tasks
-(`http://localhost:3000/getteacherdatetask/${date}/${name}`
+`http://localhost:3000/getteacherdatetask/${date}/${name}`
 
 to get tasks when clicked on specified date
 `http://localhost:3000/getdata/${task}`
