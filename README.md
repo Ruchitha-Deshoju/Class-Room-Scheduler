@@ -23,6 +23,14 @@ to get tasks when clicked on specified date
 `http://localhost:3000/deletedata/${id}`
 
 Database design 
+//create table to store slots
+let sql = 'CREATE TABLE slots (id INT AUTO_INCREMENT PRIMARY KEY, batch VARCHAR(255), slot VARCHAR(255), teacher VARCHAR(255), date_of_class DATE)';
+
+//create table to store teachers name
+let sql = 'CREATE TABLE teachers (id INT AUTO_INCREMENT PRIMARY KEY, teacher VARCHAR(255))';
+
+
+
 the database contains two tables 
 +---------------------+
 | Tables_in_nodemysql |
