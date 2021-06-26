@@ -67,6 +67,7 @@ slots table to store and fetch tasks
 | 13 | Batch-1 | Slot-3 | Sandeep | 2021-06-10    |                                 |
 | 15 | Batch-1 | Slot-3 | Sandeep | 2021-06-22    |                                 |
 | 16 | Batch-1 | Slot-1 | Kavya   | 2021-06-08    | teach merge sort implementation |
+| 17 | Batch-3 | Slot-1 | Sandeep | 2021-06-08    | teach OSI reference model       |
 +----+---------+--------+---------+---------------+---------------------------------+
 
 # PrepCodingAssessmentFrontend
