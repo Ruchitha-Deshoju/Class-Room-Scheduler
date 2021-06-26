@@ -1,3 +1,5 @@
+HTTPRoutes to fetch data
+
 to add teacher to database
 `http://localhost:3000/addteacher`
 
