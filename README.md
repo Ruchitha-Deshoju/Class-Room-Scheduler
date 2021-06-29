@@ -2,6 +2,9 @@
 
 https://documenter.getpostman.com/view/16239375/TzedhkB7
 
+## Project Demo Video
+https://drive.google.com/file/d/1_ETV0jyM1sTKIOy3ligJu7f25ULoiOip/view?usp=sharing
+
 ## Database design 
 the database contains two tables teachers and slots.
 teachers table is used to store and fetch teachers name from database. 
